@@ -1,0 +1,10 @@
+.member-counter {
+    float: left;
+    padding-left: 1vh;
+    padding-top: 1vh;
+  }
+  
+  .member-counter-font-weight {
+    font-weight: 600;
+  }
+  
