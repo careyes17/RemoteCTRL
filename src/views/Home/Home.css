@@ -1,4 +1,14 @@
 .center {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 5%;
+    margin: 5%;
+}
+
+.printer {
+    grid-area: printer;
+}
+
+.crane {
+    grid-area: crane;
 }

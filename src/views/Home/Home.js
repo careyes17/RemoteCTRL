@@ -5,7 +5,8 @@ import './Home.css'
 function Home() {
   return (
     <div className='center'>
-      <Card test='•'/>
+      <Card className='printer' test='•'/>
+      <Card className='crane' test='•'/>
     </div>
   );
 }
