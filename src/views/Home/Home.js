@@ -4,9 +4,9 @@ import './Home.css'
 
 function Home() {
   return (
-    <div className='center'>
-      <Card className='printer' test='•'/>
-      <Card className='crane' test='•'/>
+    <div className='grid'>
+      <Card test='•' gridElement='printer'/>
+      <Card test='•' gridElement='crane'/>
     </div>
   );
 }

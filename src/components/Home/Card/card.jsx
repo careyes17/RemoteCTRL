@@ -5,27 +5,27 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import './card.css'
 
 const useStyles = makeStyles({
-    card: {},
     bullet: {
       display: 'inline-block',
       margin: '0 2px',
       transform: 'scale(0.8)',
     },
     title: {
-      fontSize: 14,
+      fontSize: '2vw',
     },
     pos: {
       marginBottom: 12,
     },
   });
 
-  export default function HomeCard({test}) {
+  export default function HomeCard({test, gridElement}) {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
     return (
-        <Card className={classes.card}>
+        <Card className={gridElement}>
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
             Word of the Day
