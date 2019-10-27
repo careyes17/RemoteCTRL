@@ -30,7 +30,8 @@
 
 .up-down {
     grid-area: up-down;
-    background: black;
+    justify-self: center;
+    align-self: center;
 }
 
 .upload-file {

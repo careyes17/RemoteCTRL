@@ -21,9 +21,9 @@ const useStyles = makeStyles({
   export default function HomeCard({page, gridElement, history}) {
     const classes = useStyles();
     function routeTo() {
-      if (gridElement == 'printer') {
+      if (gridElement === 'printer') {
         history.push('/printer');
-      } else if (gridElement == 'crane') {
+      } else if (gridElement === 'crane') {
         history.push('/crane');
       }
     }

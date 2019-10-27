@@ -1,17 +1,31 @@
-.grid-dpad {
+.dpad-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". up ."
+    "left center right"
+    ". down .";
+    row-gap: 5px;
+    column-gap: 5px;
 }
 
-.dpad-icon {
-    grid-area: dpad-icon;
-    transform: scale(5);
+.up {
+    grid-area: up;
 }
 
-.red {
-    background: red;
+.left {
+    grid-area: left;
 }
 
-.blue {
-    background: blue;
+.right {
+    grid-area: right;
+}
+
+.down {
+    grid-area: down;
+}
+
+.center {
+    grid-area: center;
 }

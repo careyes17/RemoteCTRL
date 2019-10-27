@@ -1,0 +1,24 @@
+.updown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "up"
+    "center"
+    "down";
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+.up {
+    grid-area: up;
+}
+
+.down {
+    grid-area: down;
+}
+
+.center {
+    grid-area: center;
+    transform: rotate(90deg);
+}

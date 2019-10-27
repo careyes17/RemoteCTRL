@@ -1,6 +1,7 @@
 import React from 'react';
 import BackHome from '../../components/PrinterInterface/back-home/back-home'
 import Dpad from '../../components/PrinterInterface/dpad/dpad'
+import UpDown from '../../components/PrinterInterface/up-down/up-down'
 import './PrinterInterface.css'
 
 function PrinterInterface({history}) {
@@ -10,7 +11,7 @@ function PrinterInterface({history}) {
       <div className='title'>3D Printer Interface</div>
       <div className='video-feed'></div>
       <Dpad gridElement='dpad' className='dpad'/>
-      <div className='up-down'></div>
+      <UpDown gridElement='up-down' className='up-down'></UpDown>
       <div className='upload-file'></div>
       <div className='pause-continue'></div>
     </div>
