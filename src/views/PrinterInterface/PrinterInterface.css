@@ -1,0 +1,56 @@
+.grid-printer {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr 1fr 100px;
+    grid-template-rows: 50px 50px 50vh 25vh;
+    grid-template-areas: 
+    "back-home . . . . ."
+    ". . title title . ."
+    ". video-feed video-feed video-feed video-feed ."
+    ". dpad up-down upload-file pause-continue .";
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.dpad {
+    grid-area: dpad;
+    justify-self: center;
+    align-self: center;
+}
+
+.pause-continue {
+    grid-area: pause-continue;
+    background: black;
+}
+
+.start-print {
+    grid-area: start-print;
+    background: black;
+}
+
+.up-down {
+    grid-area: up-down;
+    background: black;
+}
+
+.upload-file {
+    grid-area: upload-file;
+    background: black;
+}
+
+.video-feed {
+    grid-area: video-feed;
+    background: black;
+}
+
+.title {
+    grid-area: title;
+    font-size: 2em;
+    white-space: nowrap;
+    justify-self: center;
+    align-self: center;
+}
+
+.back-home {
+    grid-area: back-home;
+}

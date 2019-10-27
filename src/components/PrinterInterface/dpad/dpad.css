@@ -1,0 +1,17 @@
+.grid-dpad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dpad-icon {
+    grid-area: dpad-icon;
+    transform: scale(5);
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: blue;
+}
