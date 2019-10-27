@@ -1,8 +1,13 @@
 import React from 'react';
+import Card from '../../components/Home/Card/card'
+import './Home.css'
 
-function Home() {
+function Home({history}) {
   return (
-    <div>Home</div>
+    <div className='grid'>
+      <Card page='3D Printer Interface' gridElement='printer' history={history}/>
+      <Card page='Crane Game' gridElement='crane' history={history}/>
+    </div>
   );
 }
 
