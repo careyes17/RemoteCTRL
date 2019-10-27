@@ -12,7 +12,7 @@ import './up-down.css'
     console.log('down');
   }
 
-  export default function Dpad({gridElement}) {
+  export default function UpDown({gridElement}) {
     return (
     <div className={`${gridElement}`}>
         <div className={`updown-grid`}>

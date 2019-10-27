@@ -7,7 +7,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
         history.push('/');
     }
     return (
-      <Button variant="outlined" className={`${gridElement} button`} onClick={routeTo}>
+      <Button variant="outlined" className={`${gridElement}`} onClick={routeTo}>
         <ArrowBackIosIcon/> Home
       </Button>
     );
