@@ -6,23 +6,25 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import AddIcon from '@material-ui/icons/Add';
 import './dpad.css'
 
-  function moveHeadUp() {
-    console.log('up');
-  }
+  export default function Dpad({gridElement, socket}) {
 
-  function moveHeadDown() {
-    console.log('down');
-  }
-
-  function moveHeadLeft() {
-    console.log('left');
-  }
+    function moveHeadUp() {
+      console.log('up');
+      //socket.emit('test');
+    }
   
-  function moveHeadRight() {
-    console.log('right');
-  }
+    function moveHeadDown() {
+      console.log('down');
+    }
+  
+    function moveHeadLeft() {
+      console.log('left');
+    }
+    
+    function moveHeadRight() {
+      console.log('right');
+    }
 
-  export default function Dpad({gridElement}) {
     return (
     <div className={`${gridElement}`}>
         <div className={`dpad-grid`}>

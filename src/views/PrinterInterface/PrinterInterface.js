@@ -1,4 +1,5 @@
 import React from 'react';
+import socketIOClient from 'socket.io-client'
 import BackHome from '../../components/PrinterInterface/back-home/back-home'
 import Dpad from '../../components/PrinterInterface/dpad/dpad'
 import UpDown from '../../components/PrinterInterface/up-down/up-down'
@@ -8,12 +9,18 @@ import PauseContinue from '../../components/PrinterInterface/pause-continue/paus
 import './PrinterInterface.css'
 
 function PrinterInterface({history}) {
+  const socket = socketIOClient('http://127.0.0.1:25565');
+
+  // socket.on('test', () => {
+  //   console.log("test received!")
+  // }) 
+
   return (
     <div className='grid-printer'>
       <BackHome gridElement='back-home' history={history}/>
       <div className='title'>3D Printer Interface</div>
       <div className='video-feed'></div>
-      <Dpad gridElement='dpad' className='dpad'/>
+      <Dpad gridElement='dpad' className='dpad' socket={socket}/>
       <UpDown gridElement='up-down' className='up-down'></UpDown>
       <UploadFile gridElement='upload-file' className='upload-file'></UploadFile>
       <div className='start-pause-continue-block'>
