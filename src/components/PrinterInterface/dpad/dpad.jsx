@@ -8,21 +8,31 @@ import './dpad.css'
 
   export default function Dpad({gridElement, socket}) {
 
+    const direction = {
+      UP: 'up',
+      DOWN: 'down',
+      LEFT: 'left',
+      RIGHT: 'right',
+    };
+
     function moveHeadUp() {
-      console.log('up');
-      //socket.emit('test');
+      console.log(direction.UP)
+      //socket.emit('printerMoveXY', direction.UP);
     }
   
     function moveHeadDown() {
-      console.log('down');
+      console.log(direction.DOWN);
+      //socket.emit('printerMoveXY', direction.DOWN);
     }
   
     function moveHeadLeft() {
-      console.log('left');
+      console.log(direction.LEFT);
+      //socket.emit('printerMoveXY', direction.LEFT);
     }
     
     function moveHeadRight() {
-      console.log('right');
+      console.log(direction.RIGHT);
+      //socket.emit('printerMoveXY', direction.RIGHT);
     }
 
     return (
