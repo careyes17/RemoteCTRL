@@ -11,18 +11,21 @@ class VideoFeed extends React.Component {
         }
     }
     
-    render() {
-        this.props.socket.on('printerSendImage', (imageData) => {
+    componentWillMount() {
+        this.props.socket.on('test', (image) => {
+            console.log(this.props.socket.id)
             // parse image data
+            var newimage = new Image();
+            newimage.src = `data:image/png;base64,${image}`
             // display in video stream component
-          })
-
-        const update = (frame) => {
+            // console.log(image)
             this.setState({
-                frame: frame,
+                frame: newimage.src,
             })
-        }
+          })
+    }
 
+    render() {
         return (
             <img src={this.state.frame} className={`${this.props.gridElement} video`}></img>
         )
