@@ -13,12 +13,12 @@ import './up-down.css'
 
     function moveHeadUp() {
       console.log(direction.UP);
-      //socket.emit('printerMoveXY', direction.UP);
+      socket.emit('printerMoveXY', direction.UP);
     }
   
     function moveHeadDown() {
       console.log(direction.DOWN);
-      //socket.emit('printerMoveXY', direction.DOWN);
+      socket.emit('printerMoveXY', direction.DOWN);
     }
   
     return (

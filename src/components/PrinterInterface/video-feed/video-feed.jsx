@@ -12,7 +12,7 @@ class VideoFeed extends React.Component {
     }
     
     componentWillMount() {
-        this.props.socket.on('test', (image) => {
+        this.props.socket.on('printerReceiveImage', (image) => {
             console.log(this.props.socket.id)
             // parse image data
             var newimage = new Image();

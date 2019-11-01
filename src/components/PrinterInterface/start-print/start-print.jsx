@@ -6,8 +6,8 @@ import './start-print.css'
 
     function startPrint() {
       console.log("start print")
-      //fileData = ''
-      //socket.emit('printerStartPrint', fileData)
+      const fileData = ''
+      socket.emit('printerStartPrint', fileData)
     }
 
     return (

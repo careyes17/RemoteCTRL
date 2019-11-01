@@ -17,22 +17,22 @@ import './dpad.css'
 
     function moveHeadUp() {
       console.log(direction.UP)
-      //socket.emit('printerMoveXY', direction.UP);
+      socket.emit('printerMoveXY', direction.UP);
     }
   
     function moveHeadDown() {
       console.log(direction.DOWN);
-      //socket.emit('printerMoveXY', direction.DOWN);
+      socket.emit('printerMoveXY', direction.DOWN);
     }
   
     function moveHeadLeft() {
       console.log(direction.LEFT);
-      //socket.emit('printerMoveXY', direction.LEFT);
+      socket.emit('printerMoveXY', direction.LEFT);
     }
     
     function moveHeadRight() {
       console.log(direction.RIGHT);
-      //socket.emit('printerMoveXY', direction.RIGHT);
+      socket.emit('printerMoveXY', direction.RIGHT);
     }
 
     return (

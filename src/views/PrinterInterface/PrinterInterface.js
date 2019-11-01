@@ -15,6 +15,8 @@ function PrinterInterface({history}) {
     reconnection: false
   });
 
+  socket.emit('printerUser', 'web')
+
   // socket.on('test', () => {
   //   console.log("test received!")
   // }) 

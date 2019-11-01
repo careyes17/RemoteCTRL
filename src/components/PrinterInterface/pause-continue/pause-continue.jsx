@@ -6,7 +6,7 @@ import './pause-continue.css'
 
     function pauseContinue() {
       console.log("pause/continue")
-      //socket.emit('printerPauseContinue')
+      socket.emit('printerPauseContinue')
     }
 
     return (
