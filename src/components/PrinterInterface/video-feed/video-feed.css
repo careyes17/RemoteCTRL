@@ -1,0 +1,7 @@
+.video {
+    width: 720px;
+    height: 480px;
+    background: black;
+    justify-self: center;
+    align-self: center;
+}

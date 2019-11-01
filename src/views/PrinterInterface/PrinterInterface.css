@@ -5,7 +5,7 @@
     grid-template-rows: 50px 50px 50vh 25vh;
     grid-template-areas: 
     "back-home . . . . ."
-    ". . title title . ."
+    "title title title title title title"
     ". video-feed video-feed video-feed video-feed ."
     ". dpad up-down upload-file start-pause-continue-block .";
     column-gap: 10px;

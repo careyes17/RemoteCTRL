@@ -4,15 +4,23 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import RemoveIcon from '@material-ui/icons/Remove';
 import './up-down.css'
 
-  function moveHeadUp() {
-    console.log('up');
-  }
+  export default function UpDown({gridElement, socket}) {
 
-  function moveHeadDown() {
-    console.log('down');
-  }
+    const direction = {
+      UP: 'up',
+      DOWN: 'down',
+    };
 
-  export default function UpDown({gridElement}) {
+    function moveHeadUp() {
+      console.log(direction.UP);
+      socket.emit('printerMoveXY', direction.UP);
+    }
+  
+    function moveHeadDown() {
+      console.log(direction.DOWN);
+      socket.emit('printerMoveXY', direction.DOWN);
+    }
+  
     return (
     <div className={`${gridElement}`}>
         <div className={`updown-grid`}>
