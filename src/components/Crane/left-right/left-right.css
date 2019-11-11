@@ -1,0 +1,23 @@
+.dpad-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    "left center right"
+    ". . .";
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+.center-left-right {
+    grid-area: center;
+}
