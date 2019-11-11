@@ -1,4 +1,5 @@
 import React from "react";
+import LZUTF8 from "lzutf8";
 import Button from "@material-ui/core/Button";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import "./upload-file.css";
@@ -8,25 +9,46 @@ class UploadFile extends React.Component {
     super(props);
 
     this.state = {
-      file: '',
-      safeToPrint: false,
+      fileContent: "",
+      fileName: "",
+      safeToPrint: false
     };
   }
 
   parsegcode() {
-    var gcodeFileObject = this.refs.gcode.files[0];
+    const gcodeFileObject = this.refs.gcode.files[0];
+
     if (gcodeFileObject === undefined) {
       this.setState({
-        file: '',
-        safeToPrint: false,
+        fileContent: "",
+        fileName: "",
+        safeToPrint: false
       });
       return;
-    };
+    }
+
     console.log(gcodeFileObject);
-    this.setState({
-      file: gcodeFileObject.name,
-      safeToPrint: true,
-    });
+
+    let fileReader = new FileReader();
+    fileReader.readAsText(gcodeFileObject);
+
+    let text;
+    let base64Text;
+    fileReader.onload = function() {
+      text = fileReader.result;
+      base64Text = LZUTF8.compress(text, { outputEncoding: "Base64" });
+      console.log(base64Text);
+      this.setState({
+        fileContent: base64Text,
+        fileName: gcodeFileObject.name,
+        safeToPrint: true
+      });
+      console.log(this.state);
+    }.bind(this);
+
+    fileReader.onerror = function() {
+      console.log(fileReader.error);
+    };
   }
 
   render() {
@@ -44,7 +66,7 @@ class UploadFile extends React.Component {
           ref="gcode"
           onChange={this.parsegcode.bind(this)}
         />
-        {this.state.file}
+        {this.state.fileName}
       </Button>
     );
   }
