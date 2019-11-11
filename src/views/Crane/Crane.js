@@ -13,7 +13,6 @@ function Crane({history}) {
     reconnection: false
   });
 
-  /************************************** Add to server */
   socket.emit('craneUser', 'web')
 
   // socket.on('test', () => {

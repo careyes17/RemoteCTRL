@@ -13,17 +13,17 @@ import './left-right.css'
 
     function moveHeadLeft() {
       console.log(direction.LEFT);
-      socket.emit('printerMoveXY', direction.LEFT);
+      socket.emit('craneMoveXY', direction.LEFT);
     }
     
     function moveHeadRight() {
       console.log(direction.RIGHT);
-      socket.emit('printerMoveXY', direction.RIGHT);
+      socket.emit('craneMoveXY', direction.RIGHT);
     }
 
     return (
     <div className={`${gridElement}`}>
-        <div className={`dpad-grid`}>
+        <div className={`left-right-grid`}>
             <ArrowBackIcon className='left' fontSize='large' onClick={moveHeadLeft}></ArrowBackIcon>
             <ArrowForwardIcon className='right' fontSize='large' onClick={moveHeadRight}></ArrowForwardIcon>
             <RemoveIcon className='center-left-right' fontSize='large'></RemoveIcon>

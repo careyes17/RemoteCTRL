@@ -5,8 +5,10 @@ io.on('connection', socket => {
     socket.broadcast.emit('test')
     console.log("test received")
   })
+
+  // Printer listeners
   socket.on('printerUser', (device) => {
-    console.log('User connected from ' + device)
+    console.log('Printer user connected from ' + device)
   })
   socket.on('printerMoveXY', (direction) => {
     socket.broadcast.emit('printerMoveXY', direction)
@@ -27,5 +29,22 @@ io.on('connection', socket => {
   socket.on('printerSendImage', (imageData) => {
     socket.broadcast.emit('printerReceiveImage', imageData)
     console.log("Send Image")
+  })
+
+  // Crane listeners
+  socket.on('craneUser', (device) => {
+    console.log('Crane user connected from ' + device)
+  })
+  socket.on('craneMoveXY', (direction) => {
+    socket.broadcast.emit('craneMoveXY', direction)
+    console.log("XY direction: " + direction)
+  })
+  socket.on('craneMoveZ', (direction) => {
+    socket.broadcast.emit('craneMoveZ', direction)
+    console.log("Z direction: " + direction)
+  })
+  socket.on('craneMagnet', () => {
+    socket.broadcast.emit('craneMagnet')
+    console.log("Magnet toggle")
   })
 })

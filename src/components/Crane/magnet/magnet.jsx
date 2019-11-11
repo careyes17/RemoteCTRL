@@ -4,14 +4,14 @@ import './magnet.css'
 
   export default function Magnet({gridElement, socket}) {
 
-    function pauseContinue() {
-      console.log("pause/continue")
-      socket.emit('printerPauseContinue')
+    function magnetToggle() {
+      console.log("Magnet toggle")
+      socket.emit('craneMagnet')
     }
 
     return (
-      <Button variant="outlined" className={`${gridElement} magnet`} onClick={pauseContinue}>
-        Magnet
+      <Button variant="outlined" className={`${gridElement} magnet`} onClick={magnetToggle}>
+        Magnet Toggle
       </Button>
     );
   }
