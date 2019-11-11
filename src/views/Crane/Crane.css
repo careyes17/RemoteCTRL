@@ -1,0 +1,46 @@
+.grid-crane {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 3fr 2fr 100px;
+    grid-template-rows: 50px 50px 50vh 25vh;
+    grid-template-areas: 
+    "back-home . . . . ."
+    "title title title title title title"
+    ". placeholder-icon placeholder-icon placeholder-icon placeholder-icon ."
+    ". left-right up-down magnet magnet .";
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.left-right {
+    grid-area: left-right;
+    justify-self: center;
+    align-self: center;
+}
+
+.magnet {
+    grid-area: magnet;
+}
+
+.up-down {
+    grid-area: up-down;
+    justify-self: center;
+    align-self: center;
+}
+
+.placeholder-icon {
+    grid-area: placeholder-icon;
+    background: black;
+}
+
+.title {
+    grid-area: title;
+    font-size: 2em;
+    white-space: nowrap;
+    justify-self: center;
+    align-self: center;
+}
+
+.back-home {
+    grid-area: back-home;
+}

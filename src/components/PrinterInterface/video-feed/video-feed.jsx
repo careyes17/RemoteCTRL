@@ -7,7 +7,7 @@ class VideoFeed extends React.Component {
         super(props);
 
         this.state = {
-            frame: 'https://picsum.photos/720/480',
+            frame: '', // frame: 'https://picsum.photos/720/480',
         }
     }
     
