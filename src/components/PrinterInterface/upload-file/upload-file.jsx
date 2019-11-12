@@ -7,23 +7,13 @@ import "./upload-file.css";
 class UploadFile extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      fileContent: "",
-      fileName: "",
-      safeToPrint: false
-    };
   }
 
   parsegcode() {
     const gcodeFileObject = this.refs.gcode.files[0];
 
     if (gcodeFileObject === undefined) {
-      this.setState({
-        fileContent: "",
-        fileName: "",
-        safeToPrint: false
-      });
+      this.props.changeFileStates('', '', false)
       return;
     }
 
@@ -38,12 +28,8 @@ class UploadFile extends React.Component {
       text = fileReader.result;
       base64Text = LZUTF8.compress(text, { outputEncoding: "Base64" });
       console.log(base64Text);
-      this.setState({
-        fileContent: base64Text,
-        fileName: gcodeFileObject.name,
-        safeToPrint: true
-      });
-      console.log(this.state);
+      this.props.changeFileStates(base64Text, gcodeFileObject.name, true)
+      console.log(this.props);
     }.bind(this);
 
     fileReader.onerror = function() {
@@ -66,7 +52,7 @@ class UploadFile extends React.Component {
           ref="gcode"
           onChange={this.parsegcode.bind(this)}
         />
-        {this.state.fileName}
+        {this.props.fileName}
       </Button>
     );
   }

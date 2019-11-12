@@ -5,6 +5,7 @@ import Crane from './views/Crane/Crane';
 import PrinterInterface from './views/PrinterInterface/PrinterInterface';
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Switch>
