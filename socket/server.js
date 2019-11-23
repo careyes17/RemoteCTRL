@@ -47,7 +47,6 @@ io.on('connection', socket => {
         return console.log('Error on write: ', err.message)
       }
       console.log('message written')
-      magnet_on = false
     })	  
   })
   socket.on('craneMoveZ', (direction) => {
@@ -58,7 +57,6 @@ io.on('connection', socket => {
         return console.log('Error on write: ', err.message)
       }
       console.log('message written')
-      magnet_on = false
     })	   
   })
   socket.on('craneMagnet', () => {
