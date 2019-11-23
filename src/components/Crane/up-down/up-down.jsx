@@ -20,13 +20,18 @@ import './up-down.css'
       console.log(direction.DOWN);
       socket.emit('craneMoveZ', direction.DOWN);
     }
+
+    function moveStop() {
+      console.log("Stopping Movement...");
+      socket.emit('craneMoveZ', 'stop');
+    }
   
     return (
     <div className={`${gridElement}`}>
         <div className={`updown-grid`}>
             <ArrowUpwardIcon className='up' fontSize='large' onClick={moveHeadUp}></ArrowUpwardIcon>
             <ArrowDownwardIcon className='down' fontSize='large' onClick={moveHeadDown}></ArrowDownwardIcon>
-            <RemoveIcon className='center' fontSize='large'></RemoveIcon>
+            <RemoveIcon className='center' fontSize='large' onClick={moveStop}></RemoveIcon>
         </div>
     </div>    
     );
