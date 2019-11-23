@@ -21,12 +21,17 @@ import './left-right.css'
       socket.emit('craneMoveXY', direction.RIGHT);
     }
 
+    function moveStop() {
+      console.log("Stopping Movement...");
+      socket.emit('craneMoveXY', 'stop');
+    }
+
     return (
     <div className={`${gridElement}`}>
         <div className={`left-right-grid`}>
             <ArrowBackIcon className='left' fontSize='large' onClick={moveHeadLeft}></ArrowBackIcon>
             <ArrowForwardIcon className='right' fontSize='large' onClick={moveHeadRight}></ArrowForwardIcon>
-            <RemoveIcon className='center-left-right' fontSize='large'></RemoveIcon>
+            <RemoveIcon className='center-left-right' fontSize='large' onClick={moveStop}></RemoveIcon>
         </div>
     </div>    
     );
