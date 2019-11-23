@@ -42,10 +42,24 @@ io.on('connection', socket => {
   socket.on('craneMoveXY', (direction) => {
     socket.broadcast.emit('craneMoveXY', direction)
     console.log("XY direction: " + direction)
+    port.write(`movingXY:${direction}\n`, (err) => {
+      if (err) {
+        return console.log('Error on write: ', err.message)
+      }
+      console.log('message written')
+      magnet_on = false
+    })	  
   })
   socket.on('craneMoveZ', (direction) => {
     socket.broadcast.emit('craneMoveZ', direction)
     console.log("Z direction: " + direction)
+    port.write(`movingZ:${direction}\n`, (err) => {
+      if (err) {
+        return console.log('Error on write: ', err.message)
+      }
+      console.log('message written')
+      magnet_on = false
+    })	   
   })
   socket.on('craneMagnet', () => {
     socket.broadcast.emit('craneMagnet')
