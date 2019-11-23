@@ -21,7 +21,7 @@ class PrinterInterface extends React.Component {
 
     this.history = props.history;
 
-    this.socket = socketIOClient("http://127.0.0.1:25565", {
+    this.socket = socketIOClient("http://127.0.0.1:8080", {
       reconnection: false
     });
 

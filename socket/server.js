@@ -1,4 +1,8 @@
-const io = require('socket.io')(25565)
+const io = require('socket.io')(8080)
+const SerialPort = require('serialport')
+const port = new SerialPort('../../../../dev/ttyACM0', { baudRate: 9600 })
+
+var magnet_on = false
 
 io.on('connection', socket => {
   socket.on('test', () => {
@@ -46,5 +50,22 @@ io.on('connection', socket => {
   socket.on('craneMagnet', () => {
     socket.broadcast.emit('craneMagnet')
     console.log("Magnet toggle")
+    if (magnet_on) {
+    port.write('magnet:off\n', (err) => {
+      if (err) {
+        return console.log('Error on write: ', err.message)
+      }
+      console.log('message written')
+      magnet_on = false
+    })
+   } else {
+    port.write('magnet:on\n', (err) => {
+      if (err) {
+        return console.log('Error on write: ', err.message)
+      }
+      console.log('message written')
+    })
+    magnet_on = true
+   }
   })
 })

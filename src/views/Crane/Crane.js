@@ -9,7 +9,7 @@ import './Crane.css'
 
 function Crane({history}) {
 
-  const socket = socketIOClient('http://127.0.0.1:25565', {
+  const socket = socketIOClient('http://127.0.0.1:8080', {
     reconnection: false
   });
 
